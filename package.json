@@ -1,7 +1,7 @@
 {
-  "name": "node-typescript-boilerplate",
-  "version": "0.0.0",
-  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+  "name": "kfupm-term-progress-bar",
+  "version": "0.0.1",
+  "description": "KFUPM term progress bar bot",
   "type": "module",
   "engines": {
     "node": ">= 16.13 <17"
@@ -29,13 +29,13 @@
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "jest --coverage",
-    "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "jest --watch"
+    "watch": "nodemon --ext ts,pug --ignore public",
+    "prettier": "prettier --config .prettierrc --write ."
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
+  "author": "Hady 🍍",
   "license": "Apache-2.0",
   "dependencies": {
+    "nodemon": "^2.0.19",
     "tslib": "~2.4"
   },
   "volta": {
