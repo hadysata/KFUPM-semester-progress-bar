@@ -67,7 +67,7 @@ export class CalenderHelper {
 
     const currentDay = semesterDays - DateHelper.differenceBetweenDates(dateNow, lastDay);
 
-    if (currentDay >= 1 && currentDay <= semesterDays) {
+    if (currentDay >= 0 && currentDay <= semesterDays) {
       return currentDay;
     } else {
       console.log(`first day is ${firstDay}`);
@@ -80,9 +80,7 @@ export class CalenderHelper {
 
       console.log(`current day is ${currentDay}`);
 
-      console.error("Couldn't find a day in the calendar that matches the current day.");
-
-      return 0;
+      throw new Error("Couldn't find a day in the calendar that matches the current day.");
     }
   }
 

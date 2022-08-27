@@ -58,4 +58,8 @@ export class TwitterHelper {
       throw new Error('Could not find Twitter Api keys in the environment');
     }
   }
+
+  public static get twitterHelper(): TwitterHelper {
+    return new TwitterHelper(this.twitterClient);
+  }
 }
