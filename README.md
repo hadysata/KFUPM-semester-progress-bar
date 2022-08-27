@@ -29,7 +29,7 @@ This project is intended to be used with the latest Active LTS release of [Node.
 To clone this repo:
 
 1. Open a new `terminal`/`powershell` window.
-2. Move to the directory where you want Garage to be. For example:
+2. Move to the directory where you want this project to be. For example:
    ```bash
    cd C:\Users\yourname\MyCoolNodeJsProjects
    ```
