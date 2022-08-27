@@ -31,7 +31,7 @@ export async function runner() {
     const lastTweet = await twitter.getLastTweet();
 
     if (lastTweet == tweet) {
-      throw new Error(`Couldn't tweet because the last tweet is qual to the new tweet`);
+      throw new Error(`Couldn't tweet because the last tweet is equal to the new tweet`);
     }
 
     await twitter.newTweet(tweet);
