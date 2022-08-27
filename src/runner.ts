@@ -11,7 +11,7 @@ export async function runner() {
     SetupHelper.setupAll();
 
     const calender = await CalenderHelper.getCurrentSemesterCalender();
-    const calendarHelper = new CalenderHelper(calender, 1);
+    const calendarHelper = new CalenderHelper(calender);
 
     const progressBar = await ProgressBarHelper.createSemesterProgressBar(calendarHelper);
 
