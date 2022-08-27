@@ -57,7 +57,6 @@ export class CalenderHelper {
   public getCurrentDayInSemester(): number {
     let dateNow = DateTime.now();
 
-    // TODO: Remove this
     dateNow = dateNow.plus({ days: this.daysOffset });
 
     const firstDay = this.getFirstDayDateInCalender();
@@ -87,7 +86,6 @@ export class CalenderHelper {
   public getTodaysEvent(): string | undefined {
     let todaysDate = DateTime.now();
 
-    // TODO: Remove this
     todaysDate = todaysDate.plus({ days: this.daysOffset });
 
     for (const event of this.calendar.events!) {
