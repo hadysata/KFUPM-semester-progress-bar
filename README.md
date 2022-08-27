@@ -5,7 +5,7 @@
 [![APLv2][license-badge]][license]
 [![Build Status - GitHub Actions][gha-badge]][gha-ci]
 
-A twitter bot that tweet the current progress of a [KFUPM] current semester.
+A Twitter bot that tweets the current progress of the [KFUPM] current semester.
 
 The tweet will look something like this:
 
