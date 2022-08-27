@@ -10,7 +10,7 @@ export class CalenderHelper {
   calendar: Calendar;
   daysOffset: number;
 
-  constructor(calendar: Calendar, daysOffset: number = 0) {
+  constructor(calendar: Calendar, daysOffset = 0) {
     this.calendar = calendar;
     this.daysOffset = daysOffset;
   }
