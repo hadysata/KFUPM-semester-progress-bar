@@ -14,5 +14,5 @@
     "plugins": [{ "transform": "ts-transformer-keys/transformer" }]
   },
   "compileOnSave": true,
-  "include": ["src"]
+  "include": ["src", "functions"]
 }
