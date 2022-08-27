@@ -20,6 +20,8 @@ Today: Last day for faculty to submit grades to the Deanship (2:00 PM);Official 
 #KFUPM
 ```
 
+**Don't forget to follow the bot account <a href="https://twitter.com/KFUPM_SP" target="blank"><img src="https://img.shields.io/twitter/follow/KFUPM_SP?logo=twitter&style=for-the-badge" alt="KFUPM_SP" /></a> 🫶**
+
 ## Getting Started
 
 This project is intended to be used with the latest Active LTS release of [Node.js][nodejs].
