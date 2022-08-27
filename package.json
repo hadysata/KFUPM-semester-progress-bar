@@ -37,6 +37,8 @@
   "author": "Hady 🍍",
   "license": "Apache-2.0",
   "dependencies": {
+    "firebase-admin": "^10.2.0",
+    "firebase-functions": "^3.21.0",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "luxon": "^3.0.1",
