@@ -2,7 +2,6 @@
   "name": "kfupm-term-progress-bar",
   "version": "0.0.1",
   "description": "KFUPM term progress bar bot",
-  "type": "module",
   "engines": {
     "node": ">= 16.13 <17"
   },
@@ -19,14 +18,15 @@
     "rimraf": "~3.0",
     "ts-jest": "~28.0",
     "tsutils": "~3.21",
-    "typescript": "~4.7"
+    "typescript": "^4.6.4",
+    "ts-node": "^10.9.1"
   },
   "scripts": {
-    "start": "node build/src/main.js",
+    "start": "node lib/main.js",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -w -p tsconfig.json",
+    "build:watch": "tsc && tsc --watch --preserveWatchOutput",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
     "watch": "nodemon --ext ts,pug --ignore public",
@@ -35,10 +35,8 @@
   "author": "Hady 🍍",
   "license": "Apache-2.0",
   "dependencies": {
+    "axios": "^0.27.2",
     "nodemon": "^2.0.19",
     "tslib": "~2.4"
-  },
-  "volta": {
-    "node": "16.13.0"
   }
 }
