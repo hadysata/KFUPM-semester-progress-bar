@@ -22,37 +22,6 @@ Today: Last day for faculty to submit grades to the Deanship (2:00 PM);Official 
 
 **Don't forget to follow the bot account <a href="https://twitter.com/KFUPM_SP" target="blank"><img src="https://img.shields.io/twitter/follow/KFUPM_SP?logo=twitter&style=for-the-badge" alt="KFUPM_SP" /></a> 🫶**
 
-## Getting Started
-
-This project is intended to be used with the latest Active LTS release of [Node.js][nodejs].
-
-### Clone Repository
-
-To clone this repo:
-
-1. Open a new `terminal`/`powershell` window.
-2. Move to the directory where you want this project to be. For example:
-   ```bash
-   cd C:\Users\yourname\MyCoolNodeJsProjects
-   ```
-3. Clone the repo:
-   ```
-   git clone https://github.com/hadysata/KFUPM-semester-progress-bar.git
-   ```
-
-## Maintain The Codebase
-
-- Before creating a new branch, make sure you are on main, and run:
-
-```bash
-git pull
-```
-
-- If you're already on a branch and some new changes have been pushed to main, run:
-
-```bash
-git pull origin main
-```
 
 ## Contribute to This Project
 
@@ -60,7 +29,7 @@ git pull origin main
 
 If you find a bug throughout your development or testing process, please do not hesitate to file an issue describing the bug you noticed.
 
-### How to File an Issue?
+#### How to File an Issue?
 
 Here is how you create an issue:
 
@@ -73,13 +42,13 @@ Here is how you create an issue:
 
 ### Creating a New Branch
 
-Once you're assigned to an issue or want to start working on a new feature, create a new branch with a descriptive title preceded with your name as `@yourname/new-feature-title`.
+If you want to start working on a new feature/fix a bug, create a new branch with a descriptive title preceded with your name as `@yourname/new-feature-title`.
 
 _Note: branch names ar all small case separated by a dash `-`, e.g. `@hady/twitter-api-migration`_
 
 ### Conventions
 
-#### Commits & PR
+#### Commits & PRs
 
 The commit message should be structured as follows:
 
@@ -113,6 +82,55 @@ Examples :
 `date_helper.ts`
 `settings_controller.ts`
 
+## Build & Run locally
+
+This project is intended to be used with the latest Active LTS release of Node.js.
+
+### Clone Repository
+
+To clone this repo:
+
+1. Open a new `terminal`/`powershell` window.
+2. Move to the directory where you want this project to be. For example:
+   ```bash
+   cd someFolder/MyCoolNodeJsProjects
+   ```
+3. Clone the repo:
+   ```bash
+   git clone https://github.com/hadysata/KFUPM-semester-progress-bar.git
+   ```
+   
+4. Open the project in your favorite IDE/Code editor
+
+### Setup
+
+1. In the project root folder, run 
+```bash
+npm i && cd functions && npm i
+```
+
+2. If you want to use [Firebase cloud functions](https://firebase.google.com/products/functions), run:
+```bash
+npm install -g firebase-tools
+```
+
+```bash
+cd functions && firebase init
+```
+
+Follow the instraction in the CLI, and make sure to setup Firebase cloud functions(Your Firebase project plan should be `Blaze`)
+
+3. In the project root folder, create a new `.env` file, with the following variables:
+
+```JS
+APP_KEY=""
+APP_SECRET=""
+ACCESS_TOKEN=""
+ACCESS_SECRET=""
+```
+
+These are Twitter keys, used by the bot to use Twitter API, you can get these keys from [Twitter developer portal](https://developer.twitter.com/en/portal/)
+
 ## License
 
 Licensed under the APLv2. See the [LICENSE](libhttps://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE) file for details.
@@ -120,7 +138,6 @@ Licensed under the APLv2. See the [LICENSE](libhttps://github.com/hadysata/KFUPM
 [kfupm]: http://www.kfupm.edu.sa/
 [ts-badge]: https://img.shields.io/badge/TypeScript-4.7-blue.svg
 [nodejs-badge]: https://img.shields.io/badge/Node.js->=%2016.13-blue.svg
-[nodejs]: https://nodejs.org/dist/latest-v14.x/docs/api/
 [typescript]: https://www.typescriptlang.org/
 [typescript-4-7]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/
 [license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
