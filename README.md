@@ -22,6 +22,22 @@ Today: Last day for faculty to submit grades to the Deanship (2:00 PM);Official 
 
 **Don't forget to follow the bot account <a href="https://twitter.com/KFUPM_SP" target="blank"><img src="https://img.shields.io/twitter/follow/KFUPM_SP?logo=twitter&style=for-the-badge" alt="KFUPM_SP" /></a> 🫶**
 
+## Table of Contents
+  * [Contribute to This Project](#contribute-to-this-project)
+    + [Repo Issues](#repo-issues)
+      - [How to File an Issue?](#how-to-file-an-issue)
+    + [Creating a New Branch](#creating-a-new-branch)
+    + [Conventions](#conventions)
+      - [Commits and PRs](#commits-and-prs)
+      - [TypeScript File Naming](#typescript-file-naming)
+  * [Build, Run and Deploy](#build-run-and-deploy)
+    + [Clone Repository](#clone-repository)
+    + [Setup](#setup)
+    + [Run](#run)
+    + [Deploy](#deploy)
+  * [What is a simulator?](#what-is-a-simulator)
+  * [License](#license)
+
 
 ## Contribute to This Project
 
@@ -47,7 +63,7 @@ _Note: branch names are all small cases separated by a dash `-`, e.g. `@hady/twi
 
 ### Conventions
 
-#### Commits & PRs
+#### Commits and PRs
 
 The commit message should be structured as follows:
 
