@@ -32,8 +32,14 @@ export class CalenderHelper {
    * @returns The last day of the calendar.
    */
   public getLastDayDateInCalender(): DateTime {
-    //Skipping the last event in the calendar because it's always referer to an event for the next semester
-    return this.getParsedStartDate(this.calendar.events!.length - 2);
+    try {
+      //Skipping the last event in the calendar because it's always referer to an event for the next semester
+      return this.getParsedStartDate(this.calendar.events!.length - 2);
+    } catch (error) {
+      throw new Error(
+        "(CalenderHelper/getLastDayDateInCalender): Couldn't find calendar events, this might be related to KFUPM calendar API",
+      );
+    }
   }
 
   public getTotalDaysInSemester(): number {

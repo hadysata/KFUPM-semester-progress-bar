@@ -23,14 +23,18 @@ export class Simulator {
       const defaultCalendarHelper = new CalenderHelper(this.calender);
 
       const firstDay = defaultCalendarHelper.getFirstDayDateInCalender();
+      const totalDays = defaultCalendarHelper.getTotalDaysInSemester();
+
 
       console.log('Start simulating 💡');
 
       // Loop through all days in the semester
-      for (let dayIndex = 0; dayIndex <= defaultCalendarHelper.getTotalDaysInSemester(); dayIndex++) {
-        const currentDayOffset = DateHelper.differenceBetweenDates(DateTime.now(), firstDay) + dayIndex;
+      for (let dayIndex = 0; dayIndex <= totalDays; dayIndex++) {
 
         let dateNow = DateTime.now();
+
+        const currentDayOffset = DateHelper.differenceBetweenDates(dateNow, firstDay) + dayIndex;
+
         dateNow = dateNow.plus({ days: currentDayOffset });
 
         console.log(`Current Day Offset: ${currentDayOffset}`);
