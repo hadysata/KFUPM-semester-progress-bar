@@ -38,13 +38,12 @@ Here is how you create an issue:
 - Add an informative title following the naming convention below.
 - Add a detailed description with the suggested solution if possible.
 - Select applicable labels after reading each label's description.
-- Try to label the issue priority to the best of your knowledge.
 
 ### Creating a New Branch
 
-If you want to start working on a new feature/fix a bug, create a new branch with a descriptive title preceded with your name as `@yourname/new-feature-title`.
+If you want to start working on a new feature/fix a bug, create a new branch with a descriptive title preceded by your name as `@yourname/new-feature-title`.
 
-_Note: branch names ar all small case separated by a dash `-`, e.g. `@hady/twitter-api-migration`_
+_Note: branch names are all small cases separated by a dash `-`, e.g. `@hady/twitter-api-migration`_
 
 ### Conventions
 
@@ -60,7 +59,7 @@ The commit message should be structured as follows:
 [optional footer(s)]
 ```
 
-The commit contains the following structural elements, to communicate intent to the consumers of your library:
+The commit contains the following structural elements:
 
 - **fix:** a commit of the type `fix` patches a bug in the codebase.
 
@@ -76,7 +75,7 @@ Refer to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 
 
 - Small letters only.
 - Use underscore as delimiters.
-- Keep it short, clear and simple.
+- Keep it short, clear, and simple.
 
 Examples :
 `date_helper.ts`
@@ -91,16 +90,12 @@ This project is intended to be used with the latest Active LTS release of Node.j
 To clone this repo:
 
 1. Open a new `terminal`/`powershell` window.
-2. Move to the directory where you want this project to be. For example:
-   ```bash
-   cd someFolder/MyCoolNodeJsProjects
-   ```
-3. Clone the repo:
+2. Clone the repo:
    ```bash
    git clone https://github.com/hadysata/KFUPM-semester-progress-bar.git
    ```
    
-4. Open the project in your favorite IDE/Code editor
+3. Open the project in your favorite IDE/Code editor
 
 ### Setup
 
@@ -109,7 +104,7 @@ To clone this repo:
 npm i && cd functions && npm i
 ```
 
-2. If you want to use [Firebase cloud functions](https://firebase.google.com/products/functions), run:
+2. If you wish to use [Firebase cloud functions](https://firebase.google.com/products/functions), run:
 ```bash
 npm install -g firebase-tools
 ```
@@ -118,9 +113,10 @@ npm install -g firebase-tools
 cd functions && firebase init
 ```
 
-Follow the instraction in the CLI, and make sure to setup Firebase cloud functions(Your Firebase project plan should be `Blaze`)
+Follow the instructions in your CLI, and make sure to setup Firebase cloud functions(Your Firebase project plan should be `Blaze`)
 
-3. In the project root folder, create a new `.env` file, with the following variables:
+
+3. In the project root folder, create a new `.env` file with the following variables:
 
 ```JS
 APP_KEY=""
@@ -129,19 +125,24 @@ ACCESS_TOKEN=""
 ACCESS_SECRET=""
 ```
 
-These are Twitter keys, used by the bot to use Twitter API, you can get these keys from [Twitter developer portal](https://developer.twitter.com/en/portal/)
+These are Twitter keys used by the bot to use Twitter API; you can get these keys from [Twitter developer portal](https://developer.twitter.com/en/portal/)
+
+## What's `simulator`?
+The [simulator script] will simulate and try to generate whole semester tweets; this script is connected to Github workflow, so any changes that break the simulator will result in a failing test.
 
 ## License
 
-Licensed under the APLv2. See the [LICENSE](libhttps://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE) file for details.
+Licensed under the APLv2. See the [LICENSE] file for details.
 
 [kfupm]: http://www.kfupm.edu.sa/
+[nodejs]: https://nodejs.org/dist/latest-v14.x/docs/api/
+[simulator script]: https://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/src/simulator.ts
 [ts-badge]: https://img.shields.io/badge/TypeScript-4.7-blue.svg
 [nodejs-badge]: https://img.shields.io/badge/Node.js->=%2016.13-blue.svg
 [typescript]: https://www.typescriptlang.org/
 [typescript-4-7]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/
 [license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
-[license]: libhttps://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE
+[LICENSE]: libhttps://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
 [jest]: https://facebook.github.io/jest/
 [eslint]: https://github.com/eslint/eslint
