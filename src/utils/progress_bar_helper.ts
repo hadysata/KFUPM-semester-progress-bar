@@ -15,8 +15,8 @@ export class ProgressBarHelper {
 
   public static async createSemesterProgressBar(calenderHelper: CalenderHelper): Promise<ProgressBar> {
     try {
-      const currentDayInSemester = calenderHelper.getCurrentDayInSemester() ?? 0;
-      const totalDaysInSemester = calenderHelper.getTotalDaysInSemester();
+      const currentDayInSemester = calenderHelper.currentDayInSemester ?? 0;
+      const totalDaysInSemester = calenderHelper.totalDaysInSemester;
 
       console.log(
         `Current Day In Semester: ${currentDayInSemester}`,

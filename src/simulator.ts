@@ -22,15 +22,13 @@ export class Simulator {
 
       const defaultCalendarHelper = new CalenderHelper(this.calender);
 
-      const firstDay = defaultCalendarHelper.getFirstDayDateInCalender();
-      const totalDays = defaultCalendarHelper.getTotalDaysInSemester();
-
+      const firstDay = defaultCalendarHelper.firstDayDateInCalender;
+      const totalDays = defaultCalendarHelper.totalDaysInSemester;
 
       console.log('Start simulating 💡');
 
       // Loop through all days in the semester
       for (let dayIndex = 0; dayIndex <= totalDays; dayIndex++) {
-
         let dateNow = DateTime.now();
 
         const currentDayOffset = DateHelper.differenceBetweenDates(dateNow, firstDay) + dayIndex;
@@ -46,12 +44,12 @@ export class Simulator {
 
         const tweet = TweetHelper.generateTweet(
           progressBar.get(),
-          simulatedCalenderHelper.getCurrentDayInSemester(),
-          simulatedCalenderHelper.getTotalDaysInSemester(),
-          simulatedCalenderHelper.getTodaysEvent(),
+          simulatedCalenderHelper.currentDayInSemester,
+          simulatedCalenderHelper.totalDaysInSemester,
+          simulatedCalenderHelper.todaysEvent,
         );
 
-        console.log(`Current Day in the semester: ${simulatedCalenderHelper.getCurrentDayInSemester()}`);
+        console.log(`Current Day in the semester: ${simulatedCalenderHelper.currentDayInSemester}`);
 
         console.log(`Tweet:\n\n ${tweet}`);
 

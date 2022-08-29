@@ -17,9 +17,9 @@ export async function runner() {
 
     const tweet = TweetHelper.generateTweet(
       progressBar.get(),
-      calendarHelper.getCurrentDayInSemester(),
-      calendarHelper.getTotalDaysInSemester(),
-      calendarHelper.getTodaysEvent(),
+      calendarHelper.currentDayInSemester,
+      calendarHelper.totalDaysInSemester,
+      calendarHelper.todaysEvent,
     );
 
     console.log(`Tweet:\n\n ${tweet}`);

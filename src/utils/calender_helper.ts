@@ -23,7 +23,7 @@ export class CalenderHelper {
    * It returns the first day of the calendar
    * @returns The first day of the calendar.
    */
-  public getFirstDayDateInCalender(): DateTime {
+  public get firstDayDateInCalender(): DateTime {
     return this.getParsedStartDate(0);
   }
 
@@ -31,7 +31,7 @@ export class CalenderHelper {
    * It returns the last day of the calendar
    * @returns The last day of the calendar.
    */
-  public getLastDayDateInCalender(): DateTime {
+  public get lastDayDateInCalender(): DateTime {
     try {
       //Skipping the last event in the calendar because it's always referer to an event for the next semester
       return this.getParsedStartDate(this.calendar.events!.length - 2);
@@ -42,16 +42,16 @@ export class CalenderHelper {
     }
   }
 
-  public getTotalDaysInSemester(): number {
-    const firstDay = this.getFirstDayDateInCalender();
-    const lastDay = this.getLastDayDateInCalender();
+  public get totalDaysInSemester(): number {
+    const firstDay = this.firstDayDateInCalender;
+    const lastDay = this.lastDayDateInCalender;
     const daysInSemester = DateHelper.differenceBetweenDates(firstDay, lastDay);
 
     return daysInSemester;
   }
 
-  public getWeeksInSemester(): number {
-    const daysInSemester = this.getTotalDaysInSemester();
+  public get weeksInSemester(): number {
+    const daysInSemester = this.totalDaysInSemester;
 
     return Math.round(daysInSemester / 7);
   }
@@ -60,15 +60,15 @@ export class CalenderHelper {
    * It takes a calendar and returns the current day in the semester
    * @returns The current day in the semester.
    */
-  public getCurrentDayInSemester(): number {
+  public get currentDayInSemester(): number {
     let dateNow = DateTime.now();
 
     dateNow = dateNow.plus({ days: this.daysOffset });
 
-    const firstDay = this.getFirstDayDateInCalender();
-    const lastDay = this.getLastDayDateInCalender();
+    const firstDay = this.firstDayDateInCalender;
+    const lastDay = this.lastDayDateInCalender;
 
-    const semesterDays = this.getTotalDaysInSemester();
+    const semesterDays = this.totalDaysInSemester;
 
     const currentDay = semesterDays - DateHelper.differenceBetweenDates(dateNow, lastDay);
 
@@ -89,7 +89,7 @@ export class CalenderHelper {
     }
   }
 
-  public getTodaysEvent(): string | undefined {
+  public get todaysEvent(): string | undefined {
     let todaysDate = DateTime.now();
 
     todaysDate = todaysDate.plus({ days: this.daysOffset });
@@ -145,7 +145,7 @@ export class CalenderHelper {
 
         if (calendar) {
           const calendarHelper = new CalenderHelper(calendar);
-          const lastEventDate = calendarHelper.getLastDayDateInCalender();
+          const lastEventDate = calendarHelper.lastDayDateInCalender;
 
           // Check if the [lastEventDate] is in the past, if [true] then the this semester is in the past
           if (lastEventDate < dateNow) {
