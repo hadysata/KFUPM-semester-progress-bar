@@ -81,7 +81,7 @@ Examples :
 `date_helper.ts`
 `settings_controller.ts`
 
-## Build & Run locally
+## Build, Run and Deploy
 
 This project is intended to be used with the latest Active LTS release of Node.js.
 
@@ -127,14 +127,58 @@ ACCESS_SECRET=""
 
 These are Twitter keys used by the bot to use Twitter API; you can get these keys from [Twitter developer portal](https://developer.twitter.com/en/portal/)
 
-## What's `simulator`?
+### Run
+To run the script, in the project root folder run:
+
+```bash
+npm run build
+```
+
+```bash
+npm run start
+```
+
+To run the [simulator], run: 
+```bash
+npm run start:simulator
+```
+
+To run the bot on Firebase cloud functions, run:
+```bash
+cd fuctions
+```
+
+```bash
+npm run serve
+```
+
+### Deploy
+
+To deploy the bot script to **Firebase cloud functions**, run:
+```bash
+cd fuctions
+```
+
+```bash
+firebase deploy
+```
+
+You could also run this script on other cloud platform such as [Heroku] or [Railway]; just make sure to setup a cron job/scheduler to run this script in any time interval you want.
+
+## What is a simulator?
 The [simulator script] will simulate and try to generate whole semester tweets; this script is connected to Github workflow, so any changes that break the simulator will result in a failing test.
 
 ## License
 
 Licensed under the APLv2. See the [LICENSE] file for details.
 
+[simulator]: #what-is-a-simulator
+
 [kfupm]: http://www.kfupm.edu.sa/
+
+[Heroku]: https://heroku.com
+[Railway]: https://railway.app/
+
 [nodejs]: https://nodejs.org/dist/latest-v14.x/docs/api/
 [simulator script]: https://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/src/simulator.ts
 [ts-badge]: https://img.shields.io/badge/TypeScript-4.7-blue.svg
@@ -142,7 +186,7 @@ Licensed under the APLv2. See the [LICENSE] file for details.
 [typescript]: https://www.typescriptlang.org/
 [typescript-4-7]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/
 [license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
-[LICENSE]: libhttps://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE
+[LICENSE]: https://github.com/hadysata/KFUPM-semester-progress-bar/blob/main/LICENSE
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
 [jest]: https://facebook.github.io/jest/
 [eslint]: https://github.com/eslint/eslint
@@ -156,5 +200,6 @@ Licensed under the APLv2. See the [LICENSE] file for details.
 [nodejs-esm]: https://nodejs.org/docs/latest-v16.x/api/esm.html
 [ts47-esm]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#esm-nodejs
 [editorconfig]: https://editorconfig.org
+
 [gha-badge]: https://github.com/hadysata/KFUPM-semester-progress-bar/actions/workflows/nodejs.yml/badge.svg
 [gha-ci]: https://github.com/hadysata/KFUPM-semester-progress-bar/actions/workflows/nodejs.yml
