@@ -29,7 +29,6 @@
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc && tsc --watch --preserveWatchOutput",
-    "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
     "watch": "nodemon --ext ts,pug --ignore public",
     "prettier": "prettier --config .prettierrc --write ."
