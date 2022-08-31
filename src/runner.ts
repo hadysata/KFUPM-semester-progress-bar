@@ -30,7 +30,11 @@ export async function runner() {
 
     const lastTweet = await twitter.getLastTweet();
 
-    if (lastTweet == tweet) {
+    console.log(lastTweet);
+
+    console.log(tweet);
+
+    if (lastTweet?.replaceAll('\n', '') == tweet.replaceAll('\n', '')) {
       throw new Error(`Couldn't tweet because the last tweet is equal to the new tweet`);
     }
 
