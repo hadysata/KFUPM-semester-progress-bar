@@ -19,7 +19,7 @@ export async function runner() {
       progressBar.get(),
       calendarHelper.currentDayInSemester,
       calendarHelper.totalDaysInSemester,
-      calendarHelper.todaysEvent,
+      calendarHelper.nearestEvent,
     );
 
     console.log(`Tweet:\n\n ${tweet}`);

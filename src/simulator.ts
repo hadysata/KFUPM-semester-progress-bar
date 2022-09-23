@@ -46,7 +46,7 @@ export class Simulator {
           progressBar.get(),
           simulatedCalenderHelper.currentDayInSemester,
           simulatedCalenderHelper.totalDaysInSemester,
-          simulatedCalenderHelper.todaysEvent,
+          simulatedCalenderHelper.nearestEvent,
         );
 
         console.log(`Current Day in the semester: ${simulatedCalenderHelper.currentDayInSemester}`);
