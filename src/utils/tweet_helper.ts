@@ -11,13 +11,10 @@ export class TweetHelper {
   ): string {
 
 
-    /// ensure that the variables are numbers.
-    let currentDayNumber: number = +currentDay;
-    let totalSemesterDaysNumber: number = +totalSemesterDays;
 
     let tweet = this.newLine(progressBar);
-    tweet += this.newLine(`${currentDayNumber}/${totalSemesterDaysNumber} days done ✅`);
-    tweet += this.newLine(`${totalSemesterDaysNumber -currentDayNumber} days left 🗓`);
+    tweet += this.newLine(`${currentDay}/${totalSemesterDays} days passed ✅`);
+    tweet += this.newLine(`${+totalSemesterDays - +currentDay} days left 🗓`);
     if (todaysEvent) {
       tweet += this.newLine(`Today: ${todaysEvent.replaceAll('   ', '')} 💡`);
     }
