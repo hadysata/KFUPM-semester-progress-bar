@@ -89,6 +89,22 @@ export class CalenderHelper {
     }
   }
 
+  public get nearestEvent(): string | undefined {
+    const todaysEvent = this.todaysEvent;
+    const tomorrowsEvent = this.tomorrowsEvent;
+    const yesterdaysEvent = this.yesterdaysEvent;
+
+    if (todaysEvent) {
+      return `Today: ${todaysEvent}`;
+    } else if (tomorrowsEvent) {
+      return `Tomorrow: ${tomorrowsEvent}`;
+    } else if (yesterdaysEvent) {
+      return `Yesterday: ${yesterdaysEvent}`;
+    }
+
+    return undefined;
+  }
+
   public get todaysEvent(): string | undefined {
     let todaysDate = DateTime.now();
 
@@ -105,6 +121,44 @@ export class CalenderHelper {
     }
 
     console.log("Couldn't find an event in the calendar that matches the current day.");
+    return undefined;
+  }
+
+  public get tomorrowsEvent(): string | undefined {
+    let tomorrowsDate = DateTime.now();
+
+    tomorrowsDate = tomorrowsDate.plus({ days: this.daysOffset + 1 });
+
+    for (const event of this.calendar.events!) {
+      const eventDate = DateHelper.parseDate(event.start_date!);
+
+      const isTomorrow = DateHelper.isSameDay(tomorrowsDate, eventDate);
+
+      if (isTomorrow) {
+        return event.event; // Event title
+      }
+    }
+
+    console.log("Couldn't find an event in the calendar that matches tomorrows day.");
+    return undefined;
+  }
+
+  public get yesterdaysEvent(): string | undefined {
+    let yesterdaysDate = DateTime.now();
+
+    yesterdaysDate = yesterdaysDate.plus({ days: this.daysOffset - 1 });
+
+    for (const event of this.calendar.events!) {
+      const eventDate = DateHelper.parseDate(event.start_date!);
+
+      const isYesterday = DateHelper.isSameDay(yesterdaysDate, eventDate);
+
+      if (isYesterday) {
+        return event.event; // Event title
+      }
+    }
+
+    console.log("Couldn't find an event in the calendar that matches yesterday day.");
     return undefined;
   }
 
