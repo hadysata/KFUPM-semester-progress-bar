@@ -5,13 +5,16 @@ export class TweetHelper {
 
   public static generateTweet(
     progressBar: string,
-    currentDay: number | string,
-    totalSemesterDays: number | string,
+    currentDay: number | string ,
+    totalSemesterDays: number | string ,
     todaysEvent: string | undefined,
   ): string {
-    let tweet = this.newLine(progressBar);
-    tweet += this.newLine(`${currentDay}/${totalSemesterDays} days left 🗓`);
 
+
+
+    let tweet = this.newLine(progressBar);
+    tweet += this.newLine(`${currentDay}/${totalSemesterDays} days passed ✅`);
+    tweet += this.newLine(`${+totalSemesterDays - +currentDay} days left 🗓`);
     if (todaysEvent) {
       tweet += this.newLine(`Today: ${todaysEvent.replaceAll('   ', '')} 💡`);
     }
