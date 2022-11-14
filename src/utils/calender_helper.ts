@@ -15,8 +15,14 @@ export class CalenderHelper {
     this.daysOffset = daysOffset;
   }
 
+  /** Get [startDate] attribute for en [event] */
   protected getParsedStartDate(eventIndex: number): DateTime {
     return DateHelper.parseDate(this.calendar.events!.at(eventIndex)!.start_date!);
+  }
+
+  /** Get [endDate] attribute for en [event] */
+  protected getParsedEndDate(eventIndex: number): DateTime {
+    return DateHelper.parseDate(this.calendar.events!.at(eventIndex)!.end_date!);
   }
 
   /**
@@ -33,8 +39,24 @@ export class CalenderHelper {
    */
   public get lastDayDateInCalender(): DateTime {
     try {
-      //Skipping the last event in the calendar because it's always referer to an event for the next semester
-      return this.getParsedStartDate(this.calendar.events!.length - 2);
+      /**
+       * Skipping the last two events in the calendar because last event always referer to an event for the next semester
+       * and the second from last refer to last date to submit grades
+       *  We want the last day of final exams */
+
+      const lastDayIndex = this.calendar.events!.length - 3;
+
+      let lastDayDate;
+
+      /**  Trying to get the last day of the semester, but some events don't have an end date, so it tries to
+      get the start date of the event instead when there's no end date */
+      try {
+        lastDayDate = this.getParsedEndDate(lastDayIndex);
+      } catch (e) {
+        lastDayDate = this.getParsedStartDate(lastDayIndex);
+      }
+
+      return lastDayDate;
     } catch (error) {
       throw new Error(
         "(CalenderHelper/getLastDayDateInCalender): Couldn't find calendar events, this might be related to KFUPM calendar API",
