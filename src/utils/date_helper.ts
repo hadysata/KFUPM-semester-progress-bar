@@ -1,7 +1,7 @@
 import { DateTime, Settings } from 'luxon';
 
 export class DateHelper {
-  public static setup() {
+  public static setup(): void {
     Settings.defaultZone = 'Asia/Riyadh';
   }
 
