@@ -1,6 +1,5 @@
 import console from 'console';
 import { ProgressBar } from '../classes/progress_bar';
-import { Calendar } from '../types/calendar';
 import { CalenderHelper } from './calender_helper';
 
 export class ProgressBarHelper {
