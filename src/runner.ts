@@ -4,7 +4,7 @@ import { TwitterHelper } from './utils/twitter_helper';
 import { TweetHelper } from './utils/tweet_helper';
 import { SetupHelper } from './utils/setup_helper';
 
-export async function runner() {
+export async function runner(): Promise<void> {
   try {
     console.log('Starting runner 💡\n');
 

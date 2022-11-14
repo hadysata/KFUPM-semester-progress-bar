@@ -16,7 +16,7 @@ export class Simulator {
   /**
    * It loops through all days in the semester and generates a tweet for each day
    */
-  public async startSimulation() {
+  public async startSimulation(): Promise<void> {
     try {
       await SetupHelper.setupAll();
 
@@ -62,7 +62,7 @@ export class Simulator {
     }
   }
 
-  public static async start() {
+  public static async start(): Promise<void> {
     const calender = await CalenderHelper.getCurrentSemesterCalender();
 
     const simulator = new Simulator(calender!);

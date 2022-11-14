@@ -11,7 +11,7 @@ export class TwitterHelper {
    * It takes a string as an argument, and then uses the Twitter API to post that string as a tweet
    * @param {string} tweet - string - The tweet you want to post.
    */
-  public async newTweet(tweet: string) {
+  public async newTweet(tweet: string): Promise<void> {
     try {
       await this.twitterClient.v1.tweet(tweet);
 
